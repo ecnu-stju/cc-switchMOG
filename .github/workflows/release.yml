@@ -1,9 +1,12 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本号 (如 v3.11.0-fork.5 或 3.11.0-fork.5，v 前缀会自动去除)'
+        required: true
+        type: string
 
 permissions:
   contents: write
